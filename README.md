@@ -1,5 +1,5 @@
 #Vagrant
-Simple example of files needed to add to the project to use Vagrant in your project.
+Simple example of files needed to add to the project to use Vagrant in it.
 Vagrant is a software to create and configure lightweight, reproducible and portable development environments
 
 - Vagrantfile - main file for Vagrant enviroment. Contains just basic example (fix for symlinking in Windows included)
