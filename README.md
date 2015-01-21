@@ -3,11 +3,11 @@ Simple example of files needed to add to the project to use Vagrant in it.
 Vagrant is a software to create and configure lightweight, reproducible and portable development environments.
 
 #Structure
-Linux
-|- Vagrantfile
-|- bootstrap.sh
-Windows
-|- Vagrantfile
+- Linux
+   - Vagrantfile
+   - bootstrap.sh
+- Windows
+   - Vagrantfile
 
 - Vagrantfile - main file for Vagrant enviroment. Contains just basic example (fix for symlinking in Windows included in Linux version)
 - bootstrap.sh - list of latest software you want to install from shell (contains php, ruby, nodejs)
