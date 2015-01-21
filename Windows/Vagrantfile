@@ -1,0 +1,43 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+
+Vagrant.require_version ">= 1.6"
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # Configure base box parameters
+
+  # Windows XP, Windows 7, Windows 8 with IE.
+  # List of the boxes is next:
+  # vagrant-xp-ie6
+  # vagrant-xp-ie8
+  # vagrant-vista-ie7
+  # vagrant-win7-ie8
+  # vagrant-win7-ie9
+  # vagrant-win7-ie10
+  # vagrant-win7-ie11
+  # vagrant-win8-ie10
+  config.vm.box = "vagrant-windows7-enterprise"
+  config.vm.box_url = "http://aka.ms/vagrant-win7-ie10"
+
+  # Or you can use Windows 2012 if you need server one
+  #config.vm.box = "atomia/windows-2012R2"
+
+  config.vm.communicator = "winrm"
+
+  # default passwords for boxes with IE
+  config.winrm.username = "IEUser"
+  config.winrm.password = "Passw0rd!"
+
+  # Port forward WinRM and RDP
+  config.vm.network :forwarded_port, guest: 3389, host: 3389, id: "rdp", auto_correct: true
+  config.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
+
+  # use this if you want GUI running
+  config.vm.provider "virtualbox" do |vm|
+        vm.gui = true
+  end
+end
