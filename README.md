@@ -7,10 +7,10 @@ Vagrant is a software to create and configure lightweight, reproducible and port
    - Vagrantfile
    - bootstrap.sh
 - Windows
-   - Vagrantfile
+  - Vagrantfile
 
-- Vagrantfile - main file for Vagrant enviroment. Contains just basic example (fix for symlinking in Windows included in Linux version)
-- bootstrap.sh - list of latest software you want to install from shell (contains php, ruby, nodejs)
+Vagrantfile - main file for Vagrant enviroment. Contains just basic example (fix for symlinking in Windows included in Linux version).
+bootstrap.sh - list of latest software you want to install from shell (contains php, ruby, nodejs).
 
 #Usage
 ##Important - this configuration requires vagrant 1.6 or higher
