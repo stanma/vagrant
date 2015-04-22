@@ -16,3 +16,11 @@ source /usr/local/rvm/scripts/rvm
 
 # now lets install it along with nginx
 apt-get -q -y install nodejs php5 php5-cli php5-fpm nginx
+
+rm -rf /var/www /usr/share/nginx/www
+ln -s /vagrant /var/www
+ln -s /vagrant /usr/share/nginx/www
+
+cat /vagrant/deploy/default.conf > /etc/nginx/sites-available/default
+
+/etc/init.d/nginx restart
